@@ -1,0 +1,25 @@
+﻿<Application
+    x:Class="LaboPlénitudeAmnésique.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LaboPlénitudeAmnésique"
+    RequestedTheme="Light">
+    <Application.Resources>
+
+        <local:WeatherDescriptionToImageValueConverter x:Key="WeatherImage"></local:WeatherDescriptionToImageValueConverter>
+        <local:StringFormatConverter x:Key="StringConverter"></local:StringFormatConverter>
+        
+            <DataTemplate x:Key=""WeatherTemplate1">
+                          <Grid Margin = "15">
+                              <Grid.ColumnDefinitions>
+                              <ColumnDefinition Width="Auto"></ColumnDefinition>
+                              <ColumnDefinition Width="*"></ColumnDefinition>
+                              
+                          </Grid>
+
+    </Application.Resources>
+
+
+</Application>
+    
+   
