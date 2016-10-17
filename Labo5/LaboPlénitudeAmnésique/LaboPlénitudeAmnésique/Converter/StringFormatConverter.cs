@@ -29,9 +29,5 @@ namespace LaboPlénitudeAmnésique.Converter
         {
             return value;
         }
-    }/*
-    public object ConvertBack(object value, Type targetType, object parameter, string language)
-    {
-        return value;
-    }*/
+    }
 }

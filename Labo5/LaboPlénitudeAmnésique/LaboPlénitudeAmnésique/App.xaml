@@ -8,17 +8,33 @@
 
         <local:WeatherDescriptionToImageValueConverter x:Key="WeatherImage"></local:WeatherDescriptionToImageValueConverter>
         <local:StringFormatConverter x:Key="StringConverter"></local:StringFormatConverter>
-        
-            <DataTemplate x:Key=""WeatherTemplate1">
+        <vm:ViewModelLocator x:Key="Locator" xmlns:vm="using:FlickClient.ViewModel" />
+      
+        <DataTemplate x:Key="WeatherTemplate1">
                           <Grid Margin = "15">
                               <Grid.ColumnDefinitions>
-                              <ColumnDefinition Width="Auto"></ColumnDefinition>
-                              <ColumnDefinition Width="*"></ColumnDefinition>
-                              
-                          </Grid>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*">
+            </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Width="50" Height="50" Source ="{Binding WeatherDescription, Converter={StaticResource WeatherImage}}"></Image>
+            <StackPanel Grid.Column="1" Margin ="15, 0, 0, 0" Width="200">
+                <TextBlock HorizontalAlignement="Left" TextWrapping ="Wrap" Text="{Binding Date, Converter={StaticResource StringConverter}, ConverterParameter='{}{0:dd MM yyyy}'}" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignement="Left" TextWrapping ="Wrap" Text="{Binding WeatherDescription}" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignement="Left" TextWrapping ="Wrap" VerticalAlignment="Top">
+                <Run Text="Min "></Run>
+                <Run Text="{Binding MinTemp}"></Run>
+                <Run Text="°"></Run>
+                <Run Text="{Binding MaxTemp} "></Run>
+                <Run Text="°"></Run>   
+                </TextBlock>
+            </StackPanel>
+            </Grid>
+        </DataTemplate>
 
     </Application.Resources>
 
+        
 
 </Application>
     
